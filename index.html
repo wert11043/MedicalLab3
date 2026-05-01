@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>檢醫考試 6 總整理練習</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header>
+      <h1 id="pageTitle">檢醫考試 6 總整理練習</h1>
+      <p id="pageSubtitle">內容依據《總整理.md》抽出高頻重點，先配對再填空。</p>
+    </header>
+
+    <div class="categories categories-secondary" id="groupChips"></div>
+    <div class="categories" id="sectionChips"></div>
+    <div class="section-summary" id="sectionSummary"></div>
+
+    <div class="toolbar">
+      <button class="tool-btn" id="resetBtn">重新練習</button>
+      <button class="tool-btn answer-btn" id="toggleAnswerBtn">顯示答案</button>
+    </div>
+
+    <div class="status" id="statusBar">
+      進度 <b id="progressText">0 / 0</b> &nbsp;｜&nbsp; 錯誤 <b id="errorText">0</b>
+    </div>
+
+    <section id="flashcardSection" class="hidden">
+      <div class="activity-label">圖片辨識</div>
+      <div class="flashcard-wrapper">
+        <div class="flashcard-progress" id="fcProgress">1 / 6</div>
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-inner" id="flashcardInner">
+            <div class="flashcard-front">
+              <img id="fcImage" src="" alt="" class="fc-img">
+            </div>
+            <div class="flashcard-back">
+              <img id="fcImageBack" src="" alt="" class="fc-img-back">
+              <div class="fc-answer" id="fcAnswer"></div>
+            </div>
+          </div>
+        </div>
+        <p class="flashcard-hint" id="fcHint">點擊圖片翻面查看答案</p>
+        <div class="flashcard-controls hidden" id="fcControls">
+          <button class="tool-btn fc-known-btn" id="fcKnownBtn">✓ 知道了</button>
+          <button class="tool-btn fc-unknown-btn" id="fcUnknownBtn">✗ 再看一次</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="matchingSection" class="hidden">
+      <div class="activity-label">配合題</div>
+      <div class="grid" id="quizView">
+        <div>
+          <div class="col-label" id="clueColLabel">線索 / 提示</div>
+          <div class="col" id="clueCol"></div>
+        </div>
+        <div>
+          <div class="col-label" id="answerColLabel">答案</div>
+          <div class="col" id="answerCol"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fillSection" class="hidden">
+      <div class="activity-label">填空題</div>
+      <div class="fill-card">
+        <div class="fill-meta">
+          <span id="fillCountText">0 / 0</span>
+        </div>
+        <p class="fill-prompt" id="fillPrompt">目前這個章節還沒有填空題。</p>
+        <p class="fill-hint" id="fillHint"></p>
+
+        <div class="fill-controls">
+          <input id="fillInput" type="text" placeholder="輸入答案後按 Enter 或按送出">
+          <button class="tool-btn" id="submitFillBtn">送出</button>
+          <button class="tool-btn secondary-btn" id="nextFillBtn">下一題</button>
+        </div>
+
+        <div class="fill-feedback" id="fillFeedback"></div>
+        <div class="fill-explanation" id="fillExplanation"></div>
+      </div>
+    </section>
+
+    <div class="result" id="resultCard">
+      <div class="big" id="resultScore">100%</div>
+      <p id="resultText"></p>
+      <button id="playAgainBtn">再試一次</button>
+    </div>
+
+    <div id="answerView" class="hidden">
+      <div id="answerContent"></div>
+    </div>
+  </main>
+
+  <script src="quiz-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
